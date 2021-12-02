@@ -1,26 +1,36 @@
 package com.devnation.flutter_med_check;
 
 
-import android.app.Application;
 import android.bluetooth.BluetoothDevice;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.getmedcheck.lib.MedCheck;
+import com.getmedcheck.lib.MedCheckActivity;
+import com.getmedcheck.lib.model.BleDevice;
 import com.getmedcheck.lib.model.IDeviceData;
 
 import java.util.ArrayList;
 
 
-class  Synth extends Application {
-
-
+class  Synth extends MedCheckActivity {
 
     @Override
-    public void onCreate() {
-        super.onCreate();
-        //  instance = this;
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
+
+    @Override
+    protected void onDeviceConnectionStateChange(BleDevice bleDevice, int status) {
+        super.onDeviceConnectionStateChange(bleDevice, status);
+        Log.d("My Device State", String.valueOf(status));
+
+        if (bleDevice.getMacAddress().equals(bleDevice.getMacAddress()) && status == 1) {
+
+
+        }
+    }
+
 
 
 
