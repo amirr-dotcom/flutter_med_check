@@ -1,3 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.devnation.flutter_med_check">
+    <application
+        android:name="com.devnation.flutter_med_check.App"
+        ></application>
+
 </manifest>

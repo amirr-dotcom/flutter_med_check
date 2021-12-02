@@ -92,9 +92,18 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               Text('Running on: $_platformVersion\n'),
               TextButton(onPressed: (){
-                 med.connect(context,
-                 macAdress: '192');
-              }, child: Text('Connect'))
+                med.connect(
+                    macAdress: '192');
+              }, child: Text('Connect')),
+              SizedBox(height: 30,),
+
+              TextButton(onPressed: (){
+                med.disConnect();
+              }, child: Text('DisConnect')),
+
+              TextButton(onPressed: (){
+                med.onKeyDown(2);
+              }, child: Text('Key'))
             ],
           ),
         ),

@@ -13,10 +13,10 @@ class FlutterMedCheck {
   //
   //
   //
-  // static Future<int?> onKeyDown(int key) async {
-  //   final int? numNotesOn = await _channel.invokeMethod('onKeyDown', [key]);
-  //   return numNotesOn;
-  // }
+   Future<int?> onKeyDown(int key) async {
+    final int? numNotesOn = await _channel.invokeMethod('onKeyDown', [key]);
+    return numNotesOn;
+  }
   //
   // static Future<int?> onKeyUp(int key) async {
   //   final int? numNotesOn = await _channel.invokeMethod('onKeyUp', [key]);
@@ -25,11 +25,15 @@ class FlutterMedCheck {
 
 
 
-   Future<void> connect(context,
+    Future<void> connect(
   {
     required String macAdress
   }) async {
    await _channel.invokeMethod('connect',[macAdress]);
+  }
+
+   Future<void> disConnect() async {
+    await _channel.invokeMethod('disConnect');
   }
 
 }
